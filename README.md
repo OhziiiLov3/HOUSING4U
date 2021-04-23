@@ -18,7 +18,7 @@ Craigslist
 ## User Story/ User Flow
 - As a user, I want to create a posting for my listing.
 - As user, I want to post pictures for my listing 
-- As a user, I want to be contacted for my listing 
+- As a user, I want to reply to a listing
 - As a user, I want to update my search with checkboxes 
 
 ### WireFrames 
@@ -35,9 +35,9 @@ Craigslist
 
 ## Show/Page 
 - Allows the user to be contacted about the information posted
-- This page provides detailed information about the posted(Information from edit page) 
+- This page provides detailed information about the post (Information from edit page) 
 
 ![Reply](https://media.git.generalassemb.ly/user/35030/files/b10abd80-a442-11eb-94cc-4aa157c1a865)
 
 ### ERD 
-![Screen Shot 2021-04-23 at 2 48 25 PM](https://media.git.generalassemb.ly/user/35030/files/13fc5480-a443-11eb-888f-5545ac8bb3f6)
+![Screen Shot 2021-04-23 at 4 10 52 PM](https://media.git.generalassemb.ly/user/35030/files/845ca300-a44e-11eb-90c5-15409575c9c2)
