@@ -10,9 +10,8 @@ Design an application that will allow the user to create a posting, post a pictu
  - What site are you reverse engineering?
 
 Craigslist 
-- 
-What features are you recreating?
-Pick out 4 key features within the site of your choosing for your MVP. (
+- What features are you recreating?
+- Pick out 4 key features within the site of your choosing for your MVP. 
     
     Craigslist you will be able to create a posting, post pictures, reply to posting, update search with checkboxes)
 
