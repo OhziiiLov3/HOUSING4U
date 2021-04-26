@@ -26,5 +26,5 @@ mongoose.connection.on("disconnected", function () {
 
     module.exports = {
         Posts: require("./Posts"),
-        Replies: require("./Replies")
+        Replies: require("./Replies"),
     };

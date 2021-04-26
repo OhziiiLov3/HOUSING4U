@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Housing4You</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/replies">Replies</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Edit <%= replies.name %>
+        </h1>
+        <form action="/replies/<%= reply._id%>?_method=PUT" method="POST">
+            <p>
+                <input type="text" name="name" placeholder="name" value="<%= replt.name %>" />
+            </p>
+            <p>
+                <textarea type="text" name="body" placeholder="Body">
+<%= reply.body %></textarea>
+            </p>
+            <input type="submit" value="Update Reply" />
+        </form>
+    </main>
+</body>
+
+</html>

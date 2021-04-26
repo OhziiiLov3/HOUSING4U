@@ -32,16 +32,16 @@ router.get("/new", function (req, res) {
     db.Replies.find({}, function (err, foundReplies) {
         if (err) return res.send(err);
 
-        const context = { authors: foundReplies };
+        const context = { replies: foundReplies };
         res.render("replies/new", context);
     });
 });
-/*
+
 // Show
 router.get("/:id", function (req, res) {
     db.Replies.findById(req.params.id)
         //
-        .populate("posts") 
+        .populate("replies") 
         .exec(function (err, foundReplies) {
             if (err) return res.send(err);
 
@@ -56,12 +56,12 @@ router.post("/", function (req, res) {
         if (err) return res.send(err);
 
 
-        db.Posts.findById(createdArticle.author).exec(function (err, foundAuthor) {
+        db.Posts.findById(createdReplies.author).exec(function (err, foundReplies) {
             if (err) return res.send(err);
 
             // update the author articles array
-            foundAuthor.articles.push(createdArticle); // adds article to the author
-            foundAuthor.save(); // save relationship to database, commits to memory
+            foundPosts.replies.push(createdReplies); // adds replies to the posts
+            foundPosts.save(); // save relationship to database, commits to memory
 
             return res.redirect("/replies");
         });
@@ -73,7 +73,7 @@ router.get("/:id/edit", function (req, res) {
     db.Replies.findById(req.params.id, function (err, foundReplies) {
         if (err) return res.send(err);
 
-        const context = { article: foundReplies };
+        const context = { replies: foundReplies };
         res.render("replies/edit", context);
     });
 });
@@ -94,7 +94,7 @@ router.put("/:id", function (req, res) {
         // callback function after the update has completed
         function (err, updatedReplies) {
             if (err) return res.send(err);
-            return res.redirect(`/articles/${updatedReplies._id}`);
+            return res.redirect(`/replies/${updatedReplies._id}`);
         }
     );
 });
@@ -114,5 +114,5 @@ router.delete("/:id", function (req, res) {
         });
     });
 });
-*/
+
 module.exports = router;
