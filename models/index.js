@@ -21,6 +21,6 @@ mongoose
 
 
     module.exports = {
-        Post: require("./Post"),
-        Reply: require("./Reply")
+        Posts: require("./Posts"),
+        Replies: require("./Replies")
     };

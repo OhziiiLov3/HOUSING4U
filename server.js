@@ -24,10 +24,12 @@ app.use(methodOverride("_method"));
 
 // Home routes
 app.get("/", function (req, res) {
-    res.render("home");
+    res.send("home");
 });
 
+// posts controller
 
+app.use("/posts", controllers.posts);
 
 
 /* ==== Server Listener ==== */
