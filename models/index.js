@@ -1,0 +1,26 @@
+// require mongoose
+const mongoose = require("mongoose");
+// connect to mongodb
+const dbUrl = "mongodb://localhost:27017/housing4you";
+
+// connect mongoose
+mongoose
+    .connect(dbUrl, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+    })
+    .then(function () {
+        console.log("MongoDB connected! :)");
+    })
+    .catch(function (err) {
+        console.log("MongoDB error :(");
+        console.log(err);
+    });
+
+
+    module.exports = {
+        Post: require("./Post"),
+        Reply: require("./Reply")
+    };
