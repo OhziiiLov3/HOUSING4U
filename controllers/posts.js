@@ -30,5 +30,15 @@ router.get("/", function (req, res) {
 router.get("/new", function (req, res) {
     res.render("posts/new");
 });
+// Show
+router.get("/:id", function (req, res) {
+    db.Posts.findById(req.params.id)
+        .populate("articles")
+        .exec(function (err, foundPost) {
+            if (err) return res.send(err);
 
+            const context = { post: foundPost };
+            return res.render("posts/show", context);
+        });
+});
 module.exports = router;

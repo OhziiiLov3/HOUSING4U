@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Authors</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Welcome to Housing 4 You</h1>
+        <ul>
+            <li>
+                <a href="/posts">Authors</a>
+            </li>
+            <li>
+                <a href="/posts/new">Add an Author</a>
+            </li>
+            <li>
+                <a href="/replies">Articles</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Author Info</h2>
+            <a href="/posts/<%= post._id %>/edit">Update</a>
+            <ul>
+                <li>Location: <%= post.location %>
+                </li>
+            </ul>
+        </section>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete" />
+        </form>
+
+        <section>
+            <h2>Contact Today!</h2>
+          <!--  <ul>
+                <% post.replies.forEach(post=> { %>
+                    <li>
+                        <a href="/posts/<%= reply._id %>">
+                            <%= reply.title %>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul> -->
+           
+        </section>
+    </main>
+</body>
+
+</html>
