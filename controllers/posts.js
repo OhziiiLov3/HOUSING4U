@@ -18,7 +18,7 @@ const db = require("../models");
 // Index
 router.get("/", function (req, res) {
     // mongoose
-    db.Post.find({}, function (err, allPosts) {
+    db.Posts.find({}, function (err, allPosts) {
         if (err) return res.send(err);
 
         const context = { posts: allPosts };
@@ -26,5 +26,9 @@ router.get("/", function (req, res) {
     });
 });
 
+// New
+router.get("/new", function (req, res) {
+    res.render("posts/new");
+});
 
 module.exports = router;
