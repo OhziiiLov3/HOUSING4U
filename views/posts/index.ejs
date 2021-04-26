@@ -27,9 +27,9 @@
             <p>There are no listings avaliable</p>
       <%  } %>
       <ul>
-          <% posts.forEach(posts => { %>
+          <% posts.forEach(post => { %>
               <li>
-                  <a href="/posts/<% post._id %>"> <%= post.nam %></a>
+                  <a href="/posts/<% post._id %>"> <%= post.location%></a>
               </li>
           <% }) %>
       </ul>

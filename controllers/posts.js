@@ -30,15 +30,55 @@ router.get("/", function (req, res) {
 router.get("/new", function (req, res) {
     res.render("posts/new");
 });
+
 // Show
 router.get("/:id", function (req, res) {
     db.Posts.findById(req.params.id)
-        .populate("articles")
-        .exec(function (err, foundPost) {
+        .populate("posts")
+        .exec(function (err, foundPosts) {
             if (err) return res.send(err);
 
-            const context = { post: foundPost };
+            const context = { post: foundPosts };
             return res.render("posts/show", context);
         });
+});
+
+// Create
+router.post("/", function (req, res) {
+    db.Posts.create(req.body, function (err, createdPosts) {
+        if (err) return res.send(err);
+
+        return res.redirect("/posts");
+    });
+});
+
+
+// Edit
+// presentational form
+router.get("/:id/edit", function (req, res) {
+    db.Posts.findById(req.params.id, function (err, foundPosts) {
+        if (err) res.send(err);
+
+        const context = { posts: foundPosts };
+        return res.render("posts/edit", context);
+    });
+});
+
+// Update
+// logic to PUT/REPLACE data in the database
+router.put("/:id", function (req, res) {
+    db.Posts.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: {
+                ...req.body,
+            },
+        },
+        { new: true },
+        function (err, updatedPosts) {
+            if (err) return res.send(err);
+            return res.redirect(`/posts/${updatedPosts._id}`);
+        }
+    );
 });
 module.exports = router;

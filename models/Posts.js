@@ -5,8 +5,8 @@ const postSchema = new mongoose.Schema(
         location: {
             type: String,
             required: [true, "You must provide a location "],
-        },
-        neighborhood: {
+        }
+        /* neighborhood: {
             type: String,
             required: [true, "You must provide a Neighborhood property"],
         },
@@ -21,7 +21,8 @@ const postSchema = new mongoose.Schema(
         isPetsAllowed: {
             type: Boolean,
             required: [true],
-        },
+        }, */
+        
     },
     {
         timestamps: true,
