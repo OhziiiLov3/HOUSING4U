@@ -19,6 +19,10 @@ mongoose
         console.log(err);
     });
 
+mongoose.connection.on("disconnected", function () {
+    console.log("MongoDB disconnected :(");
+});
+
 
     module.exports = {
         Posts: require("./Posts"),

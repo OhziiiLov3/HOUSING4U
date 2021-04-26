@@ -33,15 +33,17 @@ router.get("/new", function (req, res) {
 
 // Show
 router.get("/:id", function (req, res) {
+    // .populate populates show page with all articles on show page for authors. the string it takes in is the key that we're populating from the schema (not the model)
     db.Posts.findById(req.params.id)
-        .populate("posts")
-        .exec(function (err, foundPosts) {
+        .populate("replies")
+        .exec(function (err, foundAuthor) {
             if (err) return res.send(err);
 
-            const context = { post: foundPosts };
+            const context = { author: foundPost };
             return res.render("posts/show", context);
         });
 });
+
 
 // Create
 router.post("/", function (req, res) {
@@ -81,4 +83,19 @@ router.put("/:id", function (req, res) {
         }
     );
 });
+
+// Delete
+router.delete("/:index", function (req, res) {
+    const index = req.params.index;
+
+ 
+
+    db.Posts = db.Posts.filter(function (singlePost) {
+        if (singlePost._id !== parseInt(index)) {
+            return singlePost;
+        }
+    });
+
+});
+
 module.exports = router;

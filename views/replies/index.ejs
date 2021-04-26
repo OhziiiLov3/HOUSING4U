@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing4You</title>
+</head>
+
+<body>
+    <h1>Housing 4 You</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="/posts">See Lisitngs</a>
+            </li>
+            <li>
+                <a href="posts/new">Add Listing</a>
+            </li>
+            <li>
+                <a href="/">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Replies</h2>
+        <% if(!replies.length) { %>
+            <p>There are no listings avaliable</p>
+            <% } %>
+                <ul>
+                    <% replies.forEach(reply=> { %>
+                        <li>
+                            <a href="/replies/<% reply._id %>">
+                                <%= reply.name %>
+                            </a>
+                        </li>
+                        <% }) %>
+                </ul>
+    </main>
+</body>
+
+</html

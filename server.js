@@ -30,6 +30,9 @@ app.get("/", function (req, res) {
 // posts controller
 app.use("/posts", controllers.posts);
 
+//replies controller 
+app.use("/replies", controllers.replies);
+
 
 /* ==== Server Listener ==== */
 app.listen(PORT, function () {

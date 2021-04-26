@@ -10,16 +10,16 @@
 
 <body>
     <nav>
-        <h1>Welcome to Housing 4 You</h1>
+        <h1>Show Page Housing4You</h1>
         <ul>
             <li>
-                <a href="/posts">Authors</a>
+                <a href="/posts">Listings</a>
             </li>
             <li>
-                <a href="/posts/new">Add an Author</a>
+                <a href="/posts/new">Add Listings</a>
             </li>
             <li>
-                <a href="/replies">Articles</a>
+                <a href="/replies">Reply</a>
             </li>
         </ul>
     </nav>
@@ -28,8 +28,7 @@
             <h2>Listing Info</h2>
             <a href="/posts/<%= post._id %>/edit">Update</a>
             <ul>
-                <li>Location: <%= post.location %>
-                </li>
+                <li>Location: <%= post.location %></li> 
             </ul>
         </section>
         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">

@@ -19,6 +19,9 @@
         <li>
             <a href="replies"></a>
         </li>
+        <li>
+            <a href="/"></a>
+        </li>
     </ul>
     </nav>
     <main>
@@ -29,7 +32,7 @@
       <ul>
           <% posts.forEach(post => { %>
               <li>
-                  <a href="/posts/<% post._id %>"> <%= post.location%></a>
+                  <a href="/posts/<% post._id %>"> <%= post.location %></a>
               </li>
           <% }) %>
       </ul>
