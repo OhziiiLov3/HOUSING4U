@@ -45,3 +45,4 @@ Craigslist
 ### ERD 
 
 
+![Screen Shot 2021-04-23 at 4 10 52 PM](https://media.git.generalassemb.ly/user/35030/files/99954280-a76a-11eb-8fb1-8512cc56fb12)
