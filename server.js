@@ -19,6 +19,8 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 // method override middleware
 app.use(methodOverride("_method"));
+// middleware to serve public as static files
+app.use(express.static(__dirname + "/public"));
 
 /* ==== Routes/Controllers ==== */
 
