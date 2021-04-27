@@ -41,4 +41,5 @@ Pick out 4 key features within the site of your choosing for your MVP. (
 ![Reply](https://media.git.generalassemb.ly/user/35030/files/b10abd80-a442-11eb-94cc-4aa157c1a865)
 
 ### ERD 
-![Screen Shot 2021-04-23 at 2 48 25 PM](https://media.git.generalassemb.ly/user/35030/files/13fc5480-a443-11eb-888f-5545ac8bb3f6)
+![Screen Shot 2021-04-23 at 4 10 52 PM](https://media.git.generalassemb.ly/user/35030/files/cab13c80-a6b0-11eb-9881-7c00e3d02298)
+s

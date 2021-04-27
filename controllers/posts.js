@@ -33,13 +33,14 @@ router.get("/new", function (req, res) {
 
 // Show
 router.get("/:id", function (req, res) {
-    // .populate populates show page with all articles on show page for authors. the string it takes in is the key that we're populating from the schema (not the model)
+    // .populate populates show page with all replies on show page for replies. the string it takes in is the key that we're populating from the schema (not the model)
+    console.log("Test Show Page");
     db.Posts.findById(req.params.id)
         .populate("replies")
-        .exec(function (err, foundAuthor) {
+        .exec(function (err, foundPosts) {
             if (err) return res.send(err);
 
-            const context = { author: foundPost };
+            const context = { post: foundPosts };
             return res.render("posts/show", context);
         });
 });

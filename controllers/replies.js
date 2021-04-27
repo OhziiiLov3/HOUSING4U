@@ -46,7 +46,7 @@ router.get("/:id", function (req, res) {
             if (err) return res.send(err);
 
             const context = { replies: foundReplies };
-            res.render("posts/show", context);
+            res.render("replies/show", context);
         });
 });
 
@@ -56,10 +56,10 @@ router.post("/", function (req, res) {
         if (err) return res.send(err);
 
 
-        db.Posts.findById(createdReplies.author).exec(function (err, foundReplies) {
+        db.Posts.findById(createdReplies.author).exec(function (err, foundPosts) {
             if (err) return res.send(err);
 
-            // update the author articles array
+            // update the posts replies array
             foundPosts.replies.push(createdReplies); // adds replies to the posts
             foundPosts.save(); // save relationship to database, commits to memory
 
