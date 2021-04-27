@@ -23,10 +23,20 @@
     <main>
         <form action="/replies" method="POST">
             <p>
-                <input type="text" name="name" placeholder="name" />
+                <input type="text" name="name" placeholder="Name" />
             </p>
             <p>
                 <textarea type="text" name="body" placeholder="Body"></textarea>
+            </p>
+            <p>
+                <select name="posts">
+                    <option value="Add Reply">Add Location</option>
+                    <% posts.forEach ( post => { %>
+                        <option value="<%= post._id %>">
+                            <%= post.location %>
+                        </option>
+                        <% }) %>
+                </select>
             </p>
             <input type="submit" value="Reply" />
         </form>

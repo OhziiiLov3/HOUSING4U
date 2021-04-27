@@ -52,15 +52,15 @@ router.get("/:id", function (req, res) {
 
 // Create
 router.post("/", function (req, res) {
-    db.Replies.create(req.body, function (err, createdReply) {
+    db.Replies.create(req.body, function (err, createdReplies) {
         if (err) return res.send(err);
 
 
-        db.Posts.findById(createdReply.posts).exec(function (err, foundPosts) {
+        db.Posts.findById(createdReplies.posts).exec(function (err, foundPosts) {
             if (err) return res.send(err);
 
             // update the posts replies array
-            foundPosts.replies.push(createdReply); // adds replies to the posts
+            foundPosts.replies.push(createdReplies); // adds replies to the posts
             foundPosts.save(); // save relationship to database, commits to memory
 
             return res.redirect("/replies");
@@ -101,13 +101,13 @@ router.put("/:id", function (req, res) {
 
 // Delete
 router.delete("/:id", function (req, res) {
-    db.Replies.findByIdAndDelete(req.params.id, function (err, deletedReply) {
+    db.Replies.findByIdAndDelete(req.params.id, function (err, deletedReplies) {
         if (err) return res.send(err);
 
         // we find the posts, take the posts, remove the reply from the posts so that we remove the ID that we put into the array from memory.
 
-        db.Posts.findById(deletedPosts.posts, function (err, foundPosts) {
-            foundPosts.replies.remove(deletedReply);
+        db.Posts.findById(deletedReplies.posts, function (err, foundPosts) {
+            foundPosts.replies.remove(deletedReplies);
             foundPosts.save();
 
             return res.redirect("/replies");
