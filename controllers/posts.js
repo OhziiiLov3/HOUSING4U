@@ -34,7 +34,6 @@ router.get("/new", function (req, res) {
 // Show
 router.get("/:id", function (req, res) {
     // .populate populates show page with all replies on show page for replies. the string it takes in is the key that we're populating from the schema (not the model)
-    console.log("Test Show Page");
     db.Posts.findById(req.params.id)
         .populate("replies")
         .exec(function (err, foundPosts) {
@@ -86,17 +85,19 @@ router.put("/:id", function (req, res) {
 });
 
 // Delete
-router.delete("/:index", function (req, res) {
-    const index = req.params.index;
+router.delete("/:id", function (req, res) {
+    db.Posts.findByIdAndDelete(req.params.id, function (err, deletedPosts) {
+        if (err) return res.send(err);
 
- 
-
-    db.Posts = db.Posts.filter(function (singlePost) {
-        if (singlePost._id !== parseInt(index)) {
-            return singlePost;
-        }
+        db.Posts.deleteMany(
+            { author: deletedPosts._id },
+            function (err, deletedPosts) {
+                if (err) return res.send(err);
+                return res.redirect("/posts");
+            }
+        );
     });
-
 });
+
 
 module.exports = router;
