@@ -22,11 +22,11 @@
         </nav>
     </header>
     <main>
-        <h1>Edit <%= replies.name %>
+        <h1>Edit <%= reply.name %>
         </h1>
         <form action="/replies/<%= reply._id%>?_method=PUT" method="POST">
             <p>
-                <input type="text" name="name" placeholder="name" value="<%= replt.name %>" />
+                <input type="text" name="name" placeholder="name" value="<%= reply.name %>" />
             </p>
             <p>
                 <textarea type="text" name="body" placeholder="Body">

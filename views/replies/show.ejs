@@ -28,16 +28,12 @@
             <h2>Contact Info</h2>
             <a href="/replies/<%= reply._id %>/edit">Edit</a>
             <ul>
-                <li>Title: <%= reply.name %>
-                </li>
-                <li>Body: <%= reply.body %>
-                </li>
-                <li>posts: <%= reply.posts.location %>
-                </li>
+                <li>Name: <%= reply.name %></li>
+                <li>Body: <%= reply.body %></li>
             </ul>
         </section>
         <form action="/replies/<%= reply._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Reply" />
+            <input type="submit" value="Delete" />
         </form>
     </main>
 </body>

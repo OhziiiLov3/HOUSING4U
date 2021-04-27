@@ -25,15 +25,14 @@
     </nav>
     <main>
         <h2>Replies</h2>
+
         <% if(!replies.length) { %>
             <p>There are no listings avaliable</p>
             <% } %>
                 <ul>
                     <% replies.forEach(reply=> { %>
                         <li>
-                            <a href="/replies/<% reply._id %>">
-                                <%= reply.name %>
-                            </a>
+                            <a href="/replies/<%= reply._id %>"> <%= reply.name %></a>
                         </li>
                         <% }) %>
                 </ul>

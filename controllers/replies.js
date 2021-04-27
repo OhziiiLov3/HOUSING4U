@@ -29,10 +29,10 @@ router.get("/", function (req, res) {
 
  //New
 router.get("/new", function (req, res) {
-    db.Replies.find({}, function (err, foundReplies) {
+    db.Posts.find({}, function (err, foundPosts) {
         if (err) return res.send(err);
 
-        const context = { replies: foundReplies };
+        const context = { posts: foundPosts };
         res.render("replies/new", context);
     });
 });
@@ -41,26 +41,26 @@ router.get("/new", function (req, res) {
 router.get("/:id", function (req, res) {
     db.Replies.findById(req.params.id)
         //
-        .populate("replies") 
+        .populate("posts") 
         .exec(function (err, foundReplies) {
             if (err) return res.send(err);
 
-            const context = { replies: foundReplies };
+            const context = { reply: foundReplies };
             res.render("replies/show", context);
         });
 });
 
 // Create
 router.post("/", function (req, res) {
-    db.Replies.create(req.body, function (err, createdReplies) {
+    db.Replies.create(req.body, function (err, createdReply) {
         if (err) return res.send(err);
 
 
-        db.Posts.findById(createdReplies.author).exec(function (err, foundPosts) {
+        db.Posts.findById(createdReply.posts).exec(function (err, foundPosts) {
             if (err) return res.send(err);
 
             // update the posts replies array
-            foundPosts.replies.push(createdReplies); // adds replies to the posts
+            foundPosts.replies.push(createdReply); // adds replies to the posts
             foundPosts.save(); // save relationship to database, commits to memory
 
             return res.redirect("/replies");
@@ -73,7 +73,7 @@ router.get("/:id/edit", function (req, res) {
     db.Replies.findById(req.params.id, function (err, foundReplies) {
         if (err) return res.send(err);
 
-        const context = { replies: foundReplies };
+        const context = { reply: foundReplies };
         res.render("replies/edit", context);
     });
 });
@@ -101,13 +101,13 @@ router.put("/:id", function (req, res) {
 
 // Delete
 router.delete("/:id", function (req, res) {
-    db.Replies.findByIdAndDelete(req.params.id, function (err, deletedReplies) {
+    db.Replies.findByIdAndDelete(req.params.id, function (err, deletedReply) {
         if (err) return res.send(err);
 
-        // we find the author, take the author, remove the article from the author so that we remove the ID that we put into the array from memory.
+        // we find the posts, take the posts, remove the reply from the posts so that we remove the ID that we put into the array from memory.
 
         db.Posts.findById(deletedPosts.posts, function (err, foundPosts) {
-            foundPosts.replies.remove(deletedReplies);
+            foundPosts.replies.remove(deletedReply);
             foundPosts.save();
 
             return res.redirect("/replies");

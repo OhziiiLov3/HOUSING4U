@@ -37,12 +37,10 @@
 
         <section>
             <h2>Contact Today!</h2>
-          <<ul>
-                <% post.replies.forEach(post=> { %>
+          <ul>
+                <% post.replies.forEach(post => { %>
                     <li>
-                        <a href="/replies/<%= reply._id %>">
-                            <%= reply.name %>
-                        </a>
+                        <a href="/replies/<%= reply._id %>"> <%= reply.name %></a>
                     </li>
                     <% }) %>
             </ul> 
