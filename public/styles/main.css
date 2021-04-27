@@ -1,0 +1,10 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgba(168, 188, 245, 0.863);
+	color: rgb(8, 8, 8);
+}

@@ -43,4 +43,5 @@ Craigslist
 ![flowchart](https://media.git.generalassemb.ly/user/35030/files/05686a00-a450-11eb-810a-a01ef6e5730d)
 
 ### ERD 
-![Screen Shot 2021-04-23 at 4 10 52 PM](https://media.git.generalassemb.ly/user/35030/files/845ca300-a44e-11eb-90c5-15409575c9c2)
+
+

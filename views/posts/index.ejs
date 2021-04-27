@@ -11,13 +11,13 @@
     <nav>
     <ul>
         <li>
-            <a href="/posts">See Lisitngs</a>
+            <a href="/">Home</a>
         </li>
         <li>
-            <a href="posts/new">Add Listing</a>
+            <a href="/posts/new">Add Listing</a>
         </li>
         <li>
-            <a href="replies"></a>
+            <a href="/replies">Reply</a>
         </li>
     </ul>
     </nav>
@@ -27,9 +27,9 @@
             <p>There are no listings avaliable</p>
       <%  } %>
       <ul>
-          <% posts.forEach(posts => { %>
+          <% posts.forEach(post => { %>
               <li>
-                  <a href="/posts/<% post._id %>"> <%= post.nam %></a>
+                  <a href="/posts/<%= post._id %>"> <%= post.location %></a>
               </li>
           <% }) %>
       </ul>
