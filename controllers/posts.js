@@ -61,7 +61,7 @@ router.get("/:id/edit", function (req, res) {
     db.Posts.findById(req.params.id, function (err, foundPosts) {
         if (err) res.send(err);
 
-        const context = { posts: foundPosts };
+        const context = { post: foundPosts };
         return res.render("posts/edit", context);
     });
 });

@@ -24,7 +24,7 @@
     <main>
         <h1>Edit <%= post.location %></h1>
         <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-            <input type="text" name="location" value="<%=post.location %>" />
+            <input type="text" name="location" value="<%= post.location %>" />
             <input type="submit" value="Update" />
         </form>
     </main>
