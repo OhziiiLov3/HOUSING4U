@@ -17,10 +17,16 @@ const db = require("../models");
 
 // Index
 router.get("/", function (req, res) {
+    if (req.query.isSmokingAllowed) {
+        req.query.isSmokingAllowed = true;
+    } 
+    if (req.query.isPetsAllowed) {
+        req.query.isPetsAllowed = true;
+    } 
     // mongoose
-    db.Posts.find({}, function (err, allPosts) {
+    db.Posts.find(req.query, function (err, allPosts) {
         if (err) return res.send(err);
-
+      
         const context = { posts: allPosts };
         return res.render("posts/index", context);
     });
