@@ -55,6 +55,18 @@ router.get("/:id", function (req, res) {
 // Create
 
 router.post("/", function (req, res) {
+
+    if (req.body.isSmokingAllowed) {
+        req.body.isSmokingAllowed = true;
+    } else {
+        req.body.isSmokingAllowed = false;
+    }
+    if (req.body.isPetsAllowed) {
+        req.body.isPetsAllowed = true;
+    } else {
+        req.body.isPetsAllowed = false;
+    }
+
     db.Posts.create(req.body, function (err, createdPosts) {
         if (err) return res.send(err);
 

@@ -19,15 +19,18 @@ const postSchema = new mongoose.Schema(
             type: String,
             required: [true, "You must provide a Rent Amount"],
         },
-        /*
+        
         isSmokingAllowed: {
             type: Boolean,
-            required: [true],
+            required: [true, " You must provide isSmokingAllowed Property"],
+            default: false,
         },
+        
         isPetsAllowed: {
             type: Boolean,
-            required: [true],
-        }, */
+            required: [true, " You must provide isPetsAllowed Property"],
+            default: false,
+        }, 
         replies: [{ type: mongoose.Schema.Types.ObjectId, ref: "Replies" }],
     },
     {
