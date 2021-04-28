@@ -28,9 +28,16 @@ router.get("/", function (req, res) {
 
 // New
 router.get("/new", function (req, res) {
-    res.render("posts/new");
-});
+    db.Posts.find({}, function (err, foundPosts) {
+        if (err) return res.send(err);
 
+        const context = { posts: foundPosts };
+        res.render("posts/new", context);
+    });
+});
+/* router.get("/new", function (req, res) {
+    res.render("posts/new");
+}); */
 // Show
 router.get("/:id", function (req, res) {
     // .populate populates show page with all replies on show page for replies. the string it takes in is the key that we're populating from the schema (not the model)
@@ -46,14 +53,26 @@ router.get("/:id", function (req, res) {
 
 
 // Create
+
 router.post("/", function (req, res) {
+
+    if (req.body.isSmokingAllowed) {
+        req.body.isSmokingAllowed = true;
+    } else {
+        req.body.isSmokingAllowed = false;
+    }
+    if (req.body.isPetsAllowed) {
+        req.body.isPetsAllowed = true;
+    } else {
+        req.body.isPetsAllowed = false;
+    }
+
     db.Posts.create(req.body, function (err, createdPosts) {
         if (err) return res.send(err);
 
         return res.redirect("/posts");
     });
-});
-
+}); 
 
 // Edit
 // presentational form
@@ -69,6 +88,19 @@ router.get("/:id/edit", function (req, res) {
 // Update
 // logic to PUT/REPLACE data in the database
 router.put("/:id", function (req, res) {
+
+    if (req.body.isSmokingAllowed) {
+        req.body.isSmokingAllowed = true;
+    } else {
+        req.body.isSmokingAllowed = false;
+    }
+    if (req.body.isPetsAllowed) {
+        req.body.isPetsAllowed = true;
+    } else {
+        req.body.isPetsAllowed = false;
+    }
+
+
     db.Posts.findByIdAndUpdate(
         req.params.id,
         {

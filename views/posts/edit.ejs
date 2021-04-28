@@ -5,6 +5,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Goolgle Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Main JS -->
+    <script src="/scripts/app.js" defer></script>
     <title>Housing4You</title>
 </head>
 
@@ -22,11 +33,32 @@
         </nav>
     </header>
     <main>
-        <h1>Edit <%= post.location %></h1>
+        <h1>Update <%= post.address %></h1>
         <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-            <input type="text" name="location" value="<%= post.location %>" />
+            <p>
+            <input type="text" name="location" placeholder="Update Location" value="<%= post.location %>" />
+            <input type="text" name="address" placeholder="Update Address" value="<%= post.address %>" />
             <input type="submit" value="Update" />
+            <p>
+            <p>
+                <textarea type="text" name="description" placeholder="Description"></textarea>
+            </p>
+            <p>
+                <input type="text" name="rentAmount" placeholder="Rent Amount">
+                </select>
+            </p>
+            <div>
+                Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
+                Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
+            </div>
         </form>
+        <br>
+        </section>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Listing" />
+        </form>
+        
+        <section>
     </main>
 </body>
 

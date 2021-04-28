@@ -5,12 +5,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Goolgle Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Main JS -->
+    <script src="/scripts/app.js" defer></script>
     <title>Housing4You</title>
 </head>
 
 <body>
     <nav>
-        <h1>Welcome to Housing 4 You</h1>
+        <h1>
+       <a href="/">Housing 4 You</a>
+    </h1>
         <ul>
             <li>
                 <a href="/posts">See Lisitngs</a>
@@ -23,9 +36,27 @@
 </body>
 <main>
     <form action="/posts" method="POST">
-        <input type="text" name="location" placeholder="Create Post" />
-        <input type="submit" value="Create" />
-    </form>
-</main>
+        <p>
+            <input type="text" name="location" placeholder="location" />
+            <input type="text" name="neighborhood" placeholder="neighborhood">
+            <input type="text" name="address" placeholder="address">
+        </p>
+        <label for="avatar">Upload Image of unit:</label>
+        
+        <input type="text" id="avatar" name="img" accept="image/png, image/jpeg">
+        <p>
+            <textarea type="text" name="description" placeholder="Description"></textarea>
+        </p>
+        <p>
+               <input type="text" name="rentAmount" placeholder="Rent Amount">
+            </select>
+            </p>
+            <div>
+                Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
+                Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
+            </div>
+            </main>
+            <input type="submit" value="Add" />
+          
 
 </html>
