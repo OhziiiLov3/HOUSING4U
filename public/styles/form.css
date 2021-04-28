@@ -1,273 +1,43 @@
-#container{
-	background-color: #c3ccdb;
-	width: 1000px;
-	height: 1000px;
+* {
+	box-sizing: border-box;
+  }
+  
+  body {
+	background-color: rgba(125, 100, 139, 0.986);
+  }
+  
+  form {
+	padding: 20px;
 	display: flex;
-	margin: 0 auto;
-	text-align: center;
-}
-#left
-{
-	background-color: unset;
-	width: 25%;
-	height: 90%;
-}
-#right, #center, #left
-{
-	margin-right: 10px;
-	margin-left: 10px;
-}
-#LeftHeader
-{
-	background-color: unset;
-	width: 70%;
-	height: 50px;
-	margin: 0 auto;
-	margin-bottom: 20px;
-}
-#LeftBody
-{
-	background-color: silver;
-	height: 80%;
-	width: 90%;
-	margin: 10px auto;
-	padding: 5px;
-}
-#container_top
-{
-	background-color: unset;
-	width: 80%;
-	height: 10%;
-	margin-top: 10px;
-
-}
-#container_middle
-{
-	background-color: #8891a0;
-	width: 80%;
-	height: 20%;
-	padding: 5px;
-	text-align: left;
-
-}
-#container_bottom
-{
-	background-color: unset;
-	width: 80%;
-	height: 40%;
-	text-align: center;
-}
-.LB
-{
-	margin: 0 auto;
-}
-
-
-
-
-
-
-
-#center
-{
-	background-color: unset;
-	width: 40%;
-	height: 800px;
-	display: inline-flex;
-	flex-wrap: wrap;
-
-}
-
-#BodyHeader
-{
-	background-color: unset;
-	width: 70%;
-	height: 5%;
-	margin-left: 10px;
-
-}
-#bcontainer1
-{
-	background-color: unset;
-	width: 45%;
-	height: 40%;
-	text-align: left;
-	margin-top: 15px;
-}
-#bcontainer2
-{
-	background-color: unset;
-	width: 45%;
-	height: 35%;
-	text-align: left;
-}
-#bcontainer3
-{	
-	background-color: unset;
-	width: 45%;
-	height: 25%;
-	margin-right: 30px;
-	text-align: left;
-}
-#bcontainer4
-{	
-	background-color: unset;
-	width: 45%;
-	height: 30%;
-	text-align: left;
-}
-#bcontainer5
-{
-	background-color: unset;
-	width: 45%;
-	height: 10%;
-	text-align: left;
-	align-items: initial;
-	margin-right: 30px;
-}
-#bcontainer6
-{
-	background-color: unset;
-	width: 45%;
-	height: 10%;
-	text-align: left;
-	margin-top: 85px;
-}
-#bcontainer7
-{	
-	background-color: unset;
-	width: 45%;
-	height: 5%;
-	text-align: left;
-
-}
-.Mtitles
-{
-	background: #8891a0;
-	font-weight: bold;
-	font-size: 20px;
-
-}
-.boxBodyAncors
-{
-	text-decoration: underline;
-	font-size: 26px;
-	font-weight: 600;
-	background-color: whitesmoke;
-
-}
-#lastOne
-{
-	font-size: 26px;
-	background-color: whitesmoke;
-	text-decoration: none;
-	font-weight: 600;
-	color: rgb(37, 36, 36);
-}
-
-
-
-
-
-#right
-{
-	background-color: unset;
-	width: 25%;
-	height: 800px;
-}
-#RightHeader
-{
-	background-color: unset;
-	width: 85%;
-	height: 7%;
-	margin-bottom: 10px;
-}
-#container_body
-{
-	background-color: unset;
-	width: 90%;
-	height: 80%;
-	text-align: left;
-
-}
-
-#rhselect
-{
-	width: 65%;
-	height: 25px;
-}
-#rhbutton
-{
-	border-radius: 10px;
-	background-color: whitesmoke;	
-}
-
-
-
-
-
-#lh1
-{
-	color: blue;
-	text-decoration: underline;
-	font-size: 48px;
-	text-align: top;
-}
-#bh1
-{
-	text-decoration: bold;
-	font-size: 24px;
-	background-color: #8891a0;
-}
-.pLiners
-{
-	display: inline;
-	text-decoration: underline;
-	font-size: 16px;
-	margin: 10px;
-	background-color: #c3ccdb;
-}
-#cmserc
-{
-	height: 30px;
-	border: unset;
-	width: 70%;
-}
-#cmh1
-{
-	background-color: #c3ccdb;
-	font-size: 24px;
-	text-align: left;
-	margin-right: 10px;
-}
-#cmselect
-{
-	height: 30px;
-	width: 60%;
-}
-#cmbutton
-{
-	width: 50%;
-	background-color: whitesmoke;
-	border-radius: 10px;
-	margin-top: 5px;
-}
-.cbhead2
-{
-	text-decoration: underline;
-	font-size: 20px;
-	font-weight: thin;
-}
-#email
-{
-	text-decoration: underline;
-	font-size: 22px;
-}
-#emailBackRoundColor
-{
-	background-color: #c3ccdb;
-}
-#smallHead
-{
-	font-size: 20px;
-}
+	justify-content: center;
+  }
+  
+  input {
+	padding: 10px;
+	background-color: #e9e7e7;
+	border-radius: 0;
+	border: 0px;
+  }
+  
+  input:focus {
+	
+	border-radius: 0;
+	outline: none;
+	border-width: 10px;
+	border-color: hsla(120, 0%, 100%, 0.52);
+  }
+  
+  input::placeholder {
+	color: rgb(143, 143, 143);
+  }
+  
+  input[type="text"] {
+	border-radius: 10px 0 0 10px;
+	flex: 10;
+  }
+  
+  input[type="submit"] {
+	background-color: #cccccc;
+	border-radius: 0 10px 10px 0;
+	flex: 1;
+  }

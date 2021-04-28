@@ -24,6 +24,7 @@ app.use(express.static(__dirname + "/public"));
 
 /* ==== Routes/Controllers ==== */
 
+
 // Home routes
 app.get("/", function (req, res) {
     res.render("home");
