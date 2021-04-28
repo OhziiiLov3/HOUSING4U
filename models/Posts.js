@@ -35,6 +35,11 @@ const postSchema = new mongoose.Schema(
             required: [true, " You must provide isPetsAllowed Property"],
             default: false,
         }, 
+        img: {
+           type: String,
+            required: [true, " You must provide Img Property"],
+
+        }, 
         replies: [{ type: mongoose.Schema.Types.ObjectId, ref: "Replies" }],
     },
     {

@@ -40,7 +40,8 @@
       <ul>
           <% posts.forEach(post => { %>
               <li>
-                  <a href="/posts/<%= post._id %>"> <%= post.location %></a>
+                  <a href="/posts/<%= post._id %>"> <%= post.address %> 
+                </a>
               </li>
           <% }) %>
       </ul>

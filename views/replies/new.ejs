@@ -43,6 +43,7 @@
     </nav>
     <main>
         <form action="/replies" method="POST">
+            
             <p>
                 <input type="text" name="name" placeholder="Name" />
             </p>
@@ -51,10 +52,10 @@
             </p>
             <p>
                 <select name="posts">
-                    <option value="Add Reply">Add Location</option>
+                    <option value="Add Reply">Address</option>
                     <% posts.forEach ( post => { %>
                         <option value="<%= post._id %>">
-                            <%= post.location %>
+                            <%= post.address %>
                         </option>
                         <% }) %>
                 </select>

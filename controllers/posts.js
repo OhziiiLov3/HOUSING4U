@@ -88,6 +88,19 @@ router.get("/:id/edit", function (req, res) {
 // Update
 // logic to PUT/REPLACE data in the database
 router.put("/:id", function (req, res) {
+
+    if (req.body.isSmokingAllowed) {
+        req.body.isSmokingAllowed = true;
+    } else {
+        req.body.isSmokingAllowed = false;
+    }
+    if (req.body.isPetsAllowed) {
+        req.body.isPetsAllowed = true;
+    } else {
+        req.body.isPetsAllowed = false;
+    }
+
+
     db.Posts.findByIdAndUpdate(
         req.params.id,
         {

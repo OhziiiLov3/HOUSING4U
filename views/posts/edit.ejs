@@ -33,11 +33,32 @@
         </nav>
     </header>
     <main>
-        <h1>Edit <%= post.location %></h1>
+        <h1>Update <%= post.address %></h1>
         <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-            <input type="text" name="location" value="<%= post.location %>" />
+            <p>
+            <input type="text" name="location" placeholder="Update Location" value="<%= post.location %>" />
+            <input type="text" name="address" placeholder="Update Address" value="<%= post.address %>" />
             <input type="submit" value="Update" />
+            <p>
+            <p>
+                <textarea type="text" name="description" placeholder="Description"></textarea>
+            </p>
+            <p>
+                <input type="text" name="rentAmount" placeholder="Rent Amount">
+                </select>
+            </p>
+            <div>
+                Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
+                Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
+            </div>
         </form>
+        <br>
+        </section>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Listing" />
+        </form>
+        
+        <section>
     </main>
 </body>
 
