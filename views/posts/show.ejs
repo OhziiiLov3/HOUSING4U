@@ -41,18 +41,17 @@
             <ul>
                 <li>Location: <%= post.location %></li> 
                  <li>Neighborhood: <%= post.neighborhood %></li>
+                 <li>Address: <%= post.address %></li>
                  <li>Description: <%= post.description %></li>
                  <li>Rent Amount: <%= post.rentAmount %></li>
-                 <li>Smoking: <%= post.isSmokingAllowed %></li>
-                 <li>Pets: <%= post.isPetsAllowed %></li>
-
-                 
+                 <li>
                  <% if (post.isSmokingAllowed) { %> You can smoke in this unit. <% } else { %>
                         No Smoking. <% } %>
-               
+                 </li>
+                <li>
                  <% if (post.isPetsAllowed) { %> Pets are Welcomed!. <% } else { %>
                         No Pets. <% } %>
-            
+                </li>
             </ul>
         </section>
         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">

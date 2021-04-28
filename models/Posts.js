@@ -6,6 +6,10 @@ const postSchema = new mongoose.Schema(
             type: String,
             required: [true, "You must provide a location "],
         },
+        address: {
+            type: String,
+            required: [true, "You must provide a location "],
+        },
         description: {
             type: String,
             required: [true, "You must provide a Description "],
