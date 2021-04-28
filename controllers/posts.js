@@ -28,9 +28,16 @@ router.get("/", function (req, res) {
 
 // New
 router.get("/new", function (req, res) {
-    res.render("posts/new");
-});
+    db.Posts.find({}, function (err, foundPosts) {
+        if (err) return res.send(err);
 
+        const context = { posts: foundPosts };
+        res.render("posts/new", context);
+    });
+});
+/* router.get("/new", function (req, res) {
+    res.render("posts/new");
+}); */
 // Show
 router.get("/:id", function (req, res) {
     // .populate populates show page with all replies on show page for replies. the string it takes in is the key that we're populating from the schema (not the model)
@@ -46,14 +53,14 @@ router.get("/:id", function (req, res) {
 
 
 // Create
+
 router.post("/", function (req, res) {
     db.Posts.create(req.body, function (err, createdPosts) {
         if (err) return res.send(err);
 
         return res.redirect("/posts");
     });
-});
-
+}); 
 
 // Edit
 // presentational form

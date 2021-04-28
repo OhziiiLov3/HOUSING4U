@@ -40,6 +40,9 @@
             <a href="/posts/<%= post._id %>/edit">Update</a>
             <ul>
                 <li>Location: <%= post.location %></li> 
+                 <li>Neighborhood: <%= post.neighborhood %></li>
+                 <li>Description: <%= post.description %></li>
+                 <li>Rent Amount: <%= post.rentAmount %></li>
             </ul>
         </section>
         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">

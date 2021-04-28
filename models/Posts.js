@@ -6,14 +6,20 @@ const postSchema = new mongoose.Schema(
             type: String,
             required: [true, "You must provide a location "],
         },
-        /* neighborhood: {
+        description: {
+            type: String,
+            required: [true, "You must provide a Description "],
+        },
+        neighborhood: {
             type: String,
             required: [true, "You must provide a Neighborhood property"],
         },
+        
         rentAmount: {
             type: String,
             required: [true, "You must provide a Rent Amount"],
         },
+        /*
         isSmokingAllowed: {
             type: Boolean,
             required: [true],
