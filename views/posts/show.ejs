@@ -49,7 +49,7 @@
         <section>
             <h2>Contact Today!</h2>
           <ul>
-                <% post.replies.forEach(post => { %>
+                <% post.replies.forEach(reply => { %>
                     <li>
                         <a href="/replies/<%= reply._id %>"> <%= reply.name %></a>
                     </li>
