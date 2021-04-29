@@ -22,10 +22,10 @@
     <nav class="main-menu">
         <ul>
             <li>
-                <a href="/posts">
+                <a href="/">
                     <i class="fa fa-home fa-2x"></i>
                     <span class="nav-text">
-                        View Listings
+                        Home
                     </span>
                 </a>
     
@@ -40,10 +40,10 @@
     
             </li>
             <li class="has-subnav">
-                <a href="/posts/new">
+                <a href="/posts">
                     <i class="fa fa-list fa-2x"></i>
                     <span class="nav-text">
-                        Add New Listing
+                        View Listings
                     </span>
                 </a>
             <li>
@@ -55,10 +55,10 @@
                 </a>
             </li>
             <li>
-                <a href="/replies">
+                <a href="/posts/new">
                     <i class="fa fas fa-edit"></i>
                     <span class="nav-text">
-                        Update Lisiting
+                        Add New Lisiting
                     </span>
                 </a>
         </ul>
@@ -75,19 +75,13 @@
         </ul>
     </nav>
     </div>
-    </body>
-    
-    </html>
     <div class="wrapper">
-    <nav class="navbar" role="navigation" aria-label="main navigation"
+    <nav class="navbar" role="navigation" aria-label="main navigation"></nav>
         <div class="navbar-brand">
             <a class="navbar-item" href="/posts">
                 <img class="homeimage" src="https://images.unsplash.com/photo-1543071293-d91175a68672?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width=200 height=100>
-                <h1>Welcome Housing 4 You</h1>
-                <div class="homevideo">
-                    <video width="500" height="200" autoplay loop controls>
-                        <source src="/production ID_3773488.mp4" type="video/mp4" />
-                    </video>
+                <h1 class="hometitle">Welcome Housing 4 You</h1>
+               
                     <% if (user) { %>
                         <h4>
                             <%= user.username %>
@@ -96,22 +90,20 @@
                             <input type="submit" value="Logout">
                         </form>
                         <% } else { %>
-                            <a href="/login">Login</a>
-                            <a href="/register">Register</a>
+                        
+                           <button><a class="login" href="/login">Login</a></button>
+                            <button><a class="register" href="/register">Register</a></button>
                             <% } %>
-                <ul>
-                    <li>
-                        <a href="/posts">Add Listing</a>
-                    </li>
-                    <li>
-                        <a href="/replies">Reply</a>
-                    </li>
-                </ul>
-               
+
+                            <div class="homevideo">
+                                <video width="600" height="300" autoplay loop controls>
+                                    <source src="/production ID_3773488.mp4" type="video/mp4" />
+                                </video>
+               </div>
                 </div>
                 </nav>
             </a>
-    <nav>
+    <nav></nav>
 </div>
 </body>
 </html>

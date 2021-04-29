@@ -63,7 +63,7 @@ p {
   background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
   }
   @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-}
+
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 .fa-2x {
 font-size: 2em;
@@ -94,9 +94,9 @@ height:100%;
 left:0;
 width:60px;
 overflow:hidden;
--webkit-transition:width .05s linear;
 transition:width .05s linear;
--webkit-transform:translateZ(0) scale(1,1);
+transition:width .05s linear;
+transform:translateZ(0) scale(1,1);
 z-index:1000;
 }
 
@@ -119,7 +119,7 @@ color:rgb(59, 53, 53);
  font-family: arial;
 font-size: 14px;
 text-decoration:none;
--webkit-transform:translateZ(0) scale(1,1);
+transform:translateZ(0) scale(1,1);
 -webkit-transition:all .1s linear;
 transition:all .1s linear;
   
@@ -192,7 +192,21 @@ height: 100%;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
-
+.hometitle{
+align-content: center;
+}
+.login{
+margin:0;
+padding:0;
+top: 50;
+left: 50;
+}
+.register{
+margin:0;
+padding:0;
+top: 50;
+left: 50;
+}
   
 .homeimage{
 	border: 2px solid blanchedalmond;

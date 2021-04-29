@@ -20,17 +20,15 @@
 <body>
     <h1>Housing 4 You</h1>
     <nav>
-    <ul>
-        <li>
+        <p>
             <a href="/">Home</a>
-        </li>
-        <li>
+        </p>
+        <p>
             <a href="/posts/new">Add Listing</a>
-        </li>
-        <li>
+        </p>
+        <p>
             <a href="/replies">Reply</a>
-        </li>
-    </ul>
+        </p>
     </nav>
     <main>
         <form action="" method="GET">
@@ -41,7 +39,7 @@
         <div>
             Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
             Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
-           <input type="submit" value="Apply Filters">
+           <input type="submit" value="Update Search">
         </div>
 </form>
         <h2>Lisitings</h2>
@@ -52,14 +50,14 @@
         <% if(!posts.length) { %>
             <p>There are no listings avaliable</p>
       <%  } %>
-      <ul>
+  
           <% posts.forEach(post => { %>
-              <li>
+              <p>
                   <a href="/posts/<%= post._id %>"> <%= post.address %> 
                 </a>
-              </li>
+            </p>
           <% }) %>
-      </ul>
+      
     </main>
 </body>
 </html>

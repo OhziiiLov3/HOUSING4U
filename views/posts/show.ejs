@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,57 +17,113 @@
     <script src="/scripts/app.js" defer></script>
     <title>Housing4You</title>
 </head>
-
-<body>
-    <nav>
-        <h1>Show Page Housing4You</h1>
-        <ul>
-            <li>
-                <a href="/posts">Listings</a>
-            </li>
-            <li>
-                <a href="/posts/new">Add Listings</a>
-            </li>
-            <li>
-                <a href="/replies">Reply</a>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>Listing Info</h2>
-            <a href="/posts/<%= post._id %>/edit">Update</a>
+<body class="body">
+    <div class="area">
+        <nav class="main-menu">
             <ul>
-                <img src="<%= post.img %>" alt="image">
-                <li>Location: <%= post.location %></li> 
-                 <li>Neighborhood: <%= post.neighborhood %></li>
-                 <li>Address: <%= post.address %></li>
-                 <li>Description: <%= post.description %></li>
-                 <li>Rent Amount: <%= post.rentAmount %></li>
-                 <li>
-                 <% if (post.isSmokingAllowed) { %> You can smoke in this unit. <% } else { %>
-                        No Smoking. <% } %>
-                 </li>
                 <li>
-                 <% if (post.isPetsAllowed) { %> Pets are Welcomed!. <% } else { %>
-                        No Pets. <% } %>
+                    <a href="/">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Home
+                        </span>
+                    </a>
+
+                </li>
+                <li class="has-subnav">
+                    <a href="/login">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Login
+                        </span>
+                    </a>
+
+                </li>
+                <li class="has-subnav">
+                    <a href="/posts">
+                        <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            View Listings
+                        </span>
+                    </a>
+                <li>
+                    <a href="/replies/new">
+                        <i class="fa fa-font fa-2x"></i>
+                        <span class="nav-text">
+                            Reply
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/posts/new">
+                        <i class="fa fas fa-edit"></i>
+                        <span class="nav-text">
+                            Add New Lisiting
+                        </span>
+                    </a>
+            </ul>
+
+            <ul class="logout">
+                <li>
+                    <a href="/register">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="nav-text">
+                            Register
+                        </span>
+                    </a>
                 </li>
             </ul>
-       
+        </nav>
+    </div>
+    <nav>
+        <h1>Show Page Housing4You</h1>
+        <!-- <ul> -->
+            <!-- <li> -->
+                <!-- <a href="/posts">Listings</a> -->
+            <!-- </li> -->
+            <!-- <li> -->
+                <!-- <a href="/posts/new">Add Listings</a> -->
+            <!-- </li> -->
+            <!-- <li> -->
+                <!-- <a href="/replies">Reply</a> -->
+            <!-- </li> -->
+        <!-- </ul> -->
+    </nav>
+    <div>
+        <section>
             <h2>Contact Today!</h2>
-          <ul>
-             
-                <% post.replies.forEach(reply => { %>
-                    <li>
-                        <a href="/replies/<%= reply._id %>"> <%= reply.name %></a>
-                    </li>
+           
+           
+                <% post.replies.forEach(reply=> { %>
+                    <p>
+                        <a href="/replies/<%= reply._id %>">
+                            <%= reply.name %>
+                        </a>
+                    </p>
                     <% }) %>
-            </ul> 
+            
             <button>
                 <a href="/replies">Reply</a>
             </button>
+            <h2>Listing Info</h2>
+                <img src="<%= post.img %>" alt="image">
+                <p>Location: <%= post.location %></p> 
+                 <p>Neighborhood: <%= post.neighborhood %></p>
+                 <p>Address: <%= post.address %></p>
+                 <p>Description: <%= post.description %></p>
+                 <p>Rent Amount: <%= post.rentAmount %></p>
+                 <p>
+                 <% if (post.isSmokingAllowed) { %> You can smoke in this unit. <% } else { %>
+                        No Smoking. <% } %>
+                 </p>
+                <p>
+                 <% if (post.isPetsAllowed) { %> Pets are Welcomed!. <% } else { %>
+                        No Pets. <% } %>
+                 </p>
+        <button>
+            <a href="/posts/<%= post._id %>/edit">Update</a>
+        </button>
         </section>
-    </main>
+    </div>
 </body>
-
 </html>
