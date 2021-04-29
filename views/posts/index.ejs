@@ -23,7 +23,22 @@
     </ul>
     </nav>
     <main>
+        <form action="" method="GET">
+            <input type="text" name="location" placeholder="Search">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/posts" method="GET">
+        <div>
+            Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
+            Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
+           <input type="submit" value="Apply Filters">
+        </div>
+</form>
         <h2>Lisitings</h2>
+
+<% if(posts.isSmokingAllowed === true) { %>
+
+   <% } %>
         <% if(!posts.length) { %>
             <p>There are no listings avaliable</p>
       <%  } %>

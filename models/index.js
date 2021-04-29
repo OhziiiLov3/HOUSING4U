@@ -1,7 +1,10 @@
 // require mongoose
 const mongoose = require("mongoose");
+// adds ability to read .env file 
+require('dotenv').config();
 // connect to mongodb
-const dbUrl = "mongodb://localhost:27017/housing4you";
+//const dbUrl = "mongodb://localhost:27017/housing4you";
+const dbUrl = process.env.MONGO_URI;
 
 // connect mongoose
 mongoose
@@ -27,4 +30,5 @@ mongoose.connection.on("disconnected", function () {
     module.exports = {
         Posts: require("./Posts"),
         Replies: require("./Replies"),
+        User: require("./User")
     };
