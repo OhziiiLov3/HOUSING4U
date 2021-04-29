@@ -9,3 +9,7 @@ body {
 	color: rgb(8, 8, 8);
 	font-family: 'Lato', sans-serif;
 }
+.homeimage{
+	border: 2px solid blanchedalmond;
+	border-radius: 100%;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Goolgle Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Main JS -->
+    <script src="/scripts/app.js" defer></script>
+    <title>Register</title>
+</head>
+
+<body>
+    <h1>Register for an Account</h1>
+
+    <form action="/register" method="POST">
+        <p>
+            <input type="text" name="username" placeholder="Username" required minlength="5">
+        </p>
+        <p>
+            <input type="email" name="email" placeholder="Email" required>
+        </p>
+        <p>
+            <input type="password" name="password" placeholder="Password" required minlength="8">
+        </p>
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+
+</html>

@@ -38,6 +38,8 @@
         <form action="/replies/<%= reply._id%>?_method=PUT" method="POST">
             <p>
                 <input type="text" name="name" placeholder="name" value="<%= reply.name %>" />
+                <input type="text" name="email" placeholder="Email" value="<%= reply.email %>" />
+               
             </p>
             <p>
                 <textarea type="text" name="body" placeholder="Body">
@@ -47,5 +49,4 @@
         </form>
     </main>
 </body>
-
 </html>

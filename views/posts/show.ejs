@@ -57,14 +57,16 @@
        
             <h2>Contact Today!</h2>
           <ul>
-            <a href="/replies">Reply</a>
+             
                 <% post.replies.forEach(reply => { %>
                     <li>
                         <a href="/replies/<%= reply._id %>"> <%= reply.name %></a>
                     </li>
                     <% }) %>
             </ul> 
-           
+            <button>
+                <a href="/replies">Reply</a>
+            </button>
         </section>
     </main>
 </body>
