@@ -197,4 +197,13 @@ height: 100%;
 .homeimage{
 	border: 2px solid blanchedalmond;
 	border-radius: 100%;
+	align-content: center;
+}
+
+.homevideo{
+margin:0;
+padding:0;
+align-content: center;
+width: 100%;
+position: relative;
 }
