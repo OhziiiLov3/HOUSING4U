@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Housing4You</title>
+</head>
+<body>
+    <h1>Housing 4 You</h1>
+    <nav>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/posts/new">Add Listing</a>
+        </li>
+        <li>
+            <a href="/replies">Reply</a>
+        </li>
+    </ul>
+    </nav>
+    <main>
+        <form action="" method="GET">
+            <input type="text" name="location" placeholder="Search">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/posts" method="GET">
+        <div>
+            Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
+            Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
+           <input type="submit" value="Apply Filters">
+        </div>
+</form>
+        <h2>Lisitings</h2>
+
+<% if(posts.isSmokingAllowed === true) { %>
+
+   <% } %>
+        <% if(!posts.length) { %>
+            <p>There are no listings avaliable</p>
+      <%  } %>
+      <ul>
+          <% posts.forEach(post => { %>
+              <li>
+                  <a href="/posts/<%= post._id %>"> <%= post.address %> 
+                </a>
+              </li>
+          <% }) %>
+      </ul>
+    </main>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Goolgle Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Main JS -->
+    <script src="/scripts/app.js" defer></script>
+    <title>Housing4You</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Show Page Housing4You</h1>
+        <ul>
+            <li>
+                <a href="/posts">Listings</a>
+            </li>
+            <li>
+                <a href="/posts/new">Add Listings</a>
+            </li>
+            <li>
+                <a href="/replies">Reply</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Listing Info</h2>
+            <a href="/posts/<%= post._id %>/edit">Update</a>
+            <ul>
+                <img src="<%= post.img %>" alt="image">
+                <li>Location: <%= post.location %></li> 
+                 <li>Neighborhood: <%= post.neighborhood %></li>
+                 <li>Address: <%= post.address %></li>
+                 <li>Description: <%= post.description %></li>
+                 <li>Rent Amount: <%= post.rentAmount %></li>
+                 <li>
+                 <% if (post.isSmokingAllowed) { %> You can smoke in this unit. <% } else { %>
+                        No Smoking. <% } %>
+                 </li>
+                <li>
+                 <% if (post.isPetsAllowed) { %> Pets are Welcomed!. <% } else { %>
+                        No Pets. <% } %>
+                </li>
+            </ul>
+       
+            <h2>Contact Today!</h2>
+          <ul>
+             
+                <% post.replies.forEach(reply => { %>
+                    <li>
+                        <a href="/replies/<%= reply._id %>"> <%= reply.name %></a>
+                    </li>
+                    <% }) %>
+            </ul> 
+            <button>
+                <a href="/replies">Reply</a>
+            </button>
+        </section>
+    </main>
+</body>
+
+</html>
