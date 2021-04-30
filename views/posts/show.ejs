@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Goolgle Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Main JS -->
+    <script src="/scripts/app.js" defer></script>
+    <title>Housing4You</title>
+</head>
+<body class="body">
+    
+        <h1>Listing Info Housing4You</h1>
+       
+            <p>
+                <a href="/posts">View Listings</a>
+            </p>
+            <p>
+                <a href="/posts/new">Add Listings</a>
+            </p>
+           
+    </nav>
+    <div>
+        <article>
+            <h2>Contact Today!</h2>
+        <p>
+            <button class="loginbtn">
+                <a href="/replies/new">Reply</a>
+            </button>
+        </p>
+                <% post.replies.forEach(reply=> { %>
+                    <p>
+                        <a href="/replies/<%= reply._id %>">
+                            <%= reply.name %>
+                        </a>
+                    </p>
+                    <% }) %>
+            
+            <h2>Listing Info</h2>
+                <img src="<%= post.img %>" alt="image">
+                <p>Location: <%= post.location %></p> 
+                 <p>Neighborhood: <%= post.neighborhood %></p>
+                 <p>Address: <%= post.address %></p>
+                 <p>Description: <%= post.description %></p>
+                 <p>Rent Amount: <%= post.rentAmount %></p>
+                 <p>
+                 <% if (post.isSmokingAllowed) { %> You can smoke in this unit. <% } else { %>
+                        No Smoking. <% } %>
+                 </p>
+                <p>
+                 <% if (post.isPetsAllowed) { %> Pets are Welcomed!. <% } else { %>
+                        No Pets. <% } %>
+                 </p>
+        <button class="updatebtn">
+            <a href="/posts/<%= post._id %>/edit">Update</a>
+        </button>
+    </article>
+    </div>
+</body>
+</html>

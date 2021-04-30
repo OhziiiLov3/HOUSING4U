@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Goolgle Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Main JS -->
+    <script src="/scripts/app.js" defer></script>
+    <title>Housing4You</title>
+</head>
+<div class="area">
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        Home
+                    </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a href="/login">
+                    <i class="fa fa-laptop fa-2x"></i>
+                    <span class="nav-text">
+                        Login
+                    </span>
+                </a>
+
+            </li>
+
+            <li class="has-subnav">
+                <a href="/posts">
+                    <i class="fa fa-list fa-2x"></i>
+                    <span class="nav-text">
+                        View Listings
+                    </span>
+                </a>
+
+            <li>
+                <a href="/posts/new">
+                    <i class="fa fas fa-edit"></i>
+                    <span class="nav-text">
+                        Add New Lisiting
+                    </span>
+                </a>
+            <li>
+                <a href="/replies">
+                    <i class="fa fa-font fa-2x"></i>
+                    <span class="nav-text">
+                        Replies
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout">
+            <li>
+                <a href="/register">
+                    <i class="fas fa-user-plus"></i>
+                    <span class="nav-text">
+                        Register
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+    <nav>
+        <h1>Welcome to Housing4You</h1>
+        <ul>
+            <li>
+                <a href="/posts"> Lisitngs</a>
+            </li>
+            <li>
+                <a href="/replies">Reply</a>
+            </li>
+            <li>
+                <a href="/replies/new">Add Reply</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Contact Info</h2>
+            <button class="loginbtn">
+            <a href="/replies/<%= reply._id %>/edit">Edit</a>
+            </button>
+                <p>Name: <%= reply.name %></p>
+                <p>Email: <%= reply.email %></p>
+                <p>Reply: <%= reply.body %></p>
+                <p>Address: <%= reply.posts.address %></p>
+            
+        </section>
+        <form action="/replies/<%= reply._id %>?_method=DELETE" method="POST">
+            <input  class="loginbtn" type="submit" value="Delete reply"/>
+        </form>
+    </main>
+</body>
+
+</html> 
