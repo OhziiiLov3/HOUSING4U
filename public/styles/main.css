@@ -220,10 +220,10 @@ left: 50;
 .homevideo{
 margin:0;
 padding:0;
-align-content: center;
-width: 100%;
-position: relative;
+border: 1px solid blanchedalmond;;
+border-radius: 10%;
 }
+
 .replybtn{
 align-content: center;
 font-family: 'Lato',sans-serif;
