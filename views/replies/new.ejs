@@ -15,21 +15,70 @@
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <!-- Main JS -->
-    <script src="/scripts/app.js" defer></script><!-- Goolgle Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <!-- Main JS -->
     <script src="/scripts/app.js" defer></script>
     <title>Housing4You</title>
 </head>
 
 <body>
+    <div class="area">
+        <nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Home
+                        </span>
+                    </a>
+    
+                </li>
+                <li class="has-subnav">
+                    <a href="/login">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Login
+                        </span>
+                    </a>
+    
+                </li>
+    
+                <li class="has-subnav">
+                    <a href="/posts">
+                        <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            View Listings
+                        </span>
+                    </a>
+    
+                <li>
+                    <a href="/posts/new">
+                        <i class="fa fas fa-edit"></i>
+                        <span class="nav-text">
+                            Add New Lisiting
+                        </span>
+                    </a>
+                <li>
+                    <a href="/replies">
+                        <i class="fa fa-font fa-2x"></i>
+                        <span class="nav-text">
+                            Replies
+                        </span>
+                    </a>
+                </li>
+            </ul>
+    
+            <ul class="logout">
+                <li>
+                    <a href="/register">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="nav-text">
+                            Register
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <nav>
         <h1>Welcome to Housing4You</h1>
         <ul>
@@ -37,7 +86,7 @@
                 <a href="/posts">View More Listings</a>
             </li>
             <li>
-                <a href="/replies"> New Reply</a>
+                <a href="/replies"> View Replies</a>
             </li>
         </ul>
     </nav>

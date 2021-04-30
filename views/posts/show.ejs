@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,57 +17,51 @@
     <script src="/scripts/app.js" defer></script>
     <title>Housing4You</title>
 </head>
-
-<body>
-    <nav>
-        <h1>Show Page Housing4You</h1>
-        <ul>
-            <li>
-                <a href="/posts">Listings</a>
-            </li>
-            <li>
+<body class="body">
+    
+        <h1>Listing Info Housing4You</h1>
+       
+            <p>
+                <a href="/posts">View Listings</a>
+            </p>
+            <p>
                 <a href="/posts/new">Add Listings</a>
-            </li>
-            <li>
-                <a href="/replies">Reply</a>
-            </li>
-        </ul>
+            </p>
+            <p>
+                <a href="/replies/new">Reply</a>
+            </p>
     </nav>
-    <main>
-        <section>
+    <div>
+        <article>
+            <h2>Contact Today!</h2>
+        
+                <% post.replies.forEach(reply=> { %>
+                    <p>
+                        <a href="/replies/<%= reply._id %>">
+                            <%= reply.name %>
+                        </a>
+                    </p>
+                    <% }) %>
+            
             <h2>Listing Info</h2>
-            <a href="/posts/<%= post._id %>/edit">Update</a>
-            <ul>
                 <img src="<%= post.img %>" alt="image">
-                <li>Location: <%= post.location %></li> 
-                 <li>Neighborhood: <%= post.neighborhood %></li>
-                 <li>Address: <%= post.address %></li>
-                 <li>Description: <%= post.description %></li>
-                 <li>Rent Amount: <%= post.rentAmount %></li>
-                 <li>
+                <p>Location: <%= post.location %></p> 
+                 <p>Neighborhood: <%= post.neighborhood %></p>
+                 <p>Address: <%= post.address %></p>
+                 <p>Description: <%= post.description %></p>
+                 <p>Rent Amount: <%= post.rentAmount %></p>
+                 <p>
                  <% if (post.isSmokingAllowed) { %> You can smoke in this unit. <% } else { %>
                         No Smoking. <% } %>
-                 </li>
-                <li>
+                 </p>
+                <p>
                  <% if (post.isPetsAllowed) { %> Pets are Welcomed!. <% } else { %>
                         No Pets. <% } %>
-                </li>
-            </ul>
-       
-            <h2>Contact Today!</h2>
-          <ul>
-             
-                <% post.replies.forEach(reply => { %>
-                    <li>
-                        <a href="/replies/<%= reply._id %>"> <%= reply.name %></a>
-                    </li>
-                    <% }) %>
-            </ul> 
-            <button>
-                <a href="/replies">Reply</a>
-            </button>
-        </section>
-    </main>
+                 </p>
+        <button>
+            <a href="/posts/<%= post._id %>/edit">Update</a>
+        </button>
+    </article>
+    </div>
 </body>
-
 </html>

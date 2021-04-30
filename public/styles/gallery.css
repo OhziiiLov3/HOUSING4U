@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(168, 188, 245, 0.863);
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    height: 30vh;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+.gallery {
+  height: 70vh;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    max-width: 200px;
+    height: 200px;
+    background-color: rgba(168, 188, 245, 0.863);
+    color: aliceblue;
+    display: grid;
+    place-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 45%;
+        max-width: none;
+    }
+}
+@media screen and (max-width: 380px) {
+    .card {
+        width: 100%;
+        max-width: none;
+    }
+}

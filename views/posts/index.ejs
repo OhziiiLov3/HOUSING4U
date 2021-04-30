@@ -18,32 +18,78 @@
     <title>Housing4You</title>
 </head>
 <body>
+    <div class="area">
+        <nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Home
+                        </span>
+                    </a>
+    
+                </li>
+                <li class="has-subnav">
+                    <a href="/login">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Login
+                        </span>
+                    </a>
+    
+                </li>
+                <li class="has-subnav">
+                    <a href="/posts">
+                        <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            View Listings
+                        </span>
+                    </a>
+                <li>
+                    <a href="/replies/new">
+                        <i class="fa fa-font fa-2x"></i>
+                        <span class="nav-text">
+                            Reply
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/posts/new">
+                        <i class="fa fas fa-edit"></i>
+                        <span class="nav-text">
+                            Add New Lisiting
+                        </span>
+                    </a>
+            </ul>
+    
+            <ul class="logout">
+                <li>
+                    <a href="/register">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="nav-text">
+                            Register
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <h1>Housing 4 You</h1>
+    <img class="homeimage"
+        src="https://images.unsplash.com/photo-1543071293-d91175a68672?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        width=200 height=100>
     <nav>
-    <ul>
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/posts/new">Add Listing</a>
-        </li>
-        <li>
-            <a href="/replies">Reply</a>
-        </li>
-    </ul>
+        <p>
+            <a href="/replies/new">Reply</a>
+        </p>
     </nav>
     <main>
         <form action="" method="GET">
             <input type="text" name="location" placeholder="Search">
             <input type="submit" value="Search">
         </form>
-        <form action="/posts" method="GET">
-        <div>
-            Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
-            Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
-           <input type="submit" value="Apply Filters">
-        </div>
-</form>
+       
         <h2>Lisitings</h2>
 
 <% if(posts.isSmokingAllowed === true) { %>
@@ -52,14 +98,20 @@
         <% if(!posts.length) { %>
             <p>There are no listings avaliable</p>
       <%  } %>
-      <ul>
+  
           <% posts.forEach(post => { %>
-              <li>
+              <p>
                   <a href="/posts/<%= post._id %>"> <%= post.address %> 
                 </a>
-              </li>
+            </p>
           <% }) %>
-      </ul>
+    <form action="/posts" method="GET">
+        <div>
+            Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
+            Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
+            <input type="submit" value="Update Search">
+        </div>
+    </form>
     </main>
 </body>
 </html>
