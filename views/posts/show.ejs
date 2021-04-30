@@ -27,14 +27,16 @@
             <p>
                 <a href="/posts/new">Add Listings</a>
             </p>
-            <p>
-                <a href="/replies/new">Reply</a>
-            </p>
+           
     </nav>
     <div>
         <article>
             <h2>Contact Today!</h2>
-        
+        <p>
+            <button class="loginbtn">
+                <a href="/replies/new">Reply</a>
+            </button>
+        </p>
                 <% post.replies.forEach(reply=> { %>
                     <p>
                         <a href="/replies/<%= reply._id %>">
