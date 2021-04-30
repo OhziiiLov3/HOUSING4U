@@ -94,15 +94,15 @@
         </h1>
         <form action="/replies/<%= reply._id%>?_method=PUT" method="POST">
             <p>
-                <input type="text" name="name" placeholder="name" value="<%= reply.name %>" />
-                <input type="text" name="email" placeholder="Email" value="<%= reply.email %>" />
+                <input class="loginbtn"type="text" name="name" placeholder="name" value="<%= reply.name %>" />
+                <input class="loginbtn" type="text" name="email" placeholder="Email" value="<%= reply.email %>" />
                
             </p>
             <p>
-                <textarea type="text" name="body" placeholder="Body">
+                <textarea class="textarea" type="text" name="body" placeholder="Body">
 <%= reply.body %></textarea>
             </p>
-            <input type="submit" value="Update Reply" />
+            <input class="loginbtn" type="submit" value="Update Reply" />
         </form>
     </main>
 </body>

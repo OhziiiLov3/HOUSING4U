@@ -94,14 +94,14 @@
         <form action="/replies" method="POST">
             
             <p>
-                <input type="text" name="name" placeholder="Name" />
-                <input type="text" name="email" placeholder="email" />
+                <input class="replybtn" type="text" name="name" placeholder="Name" />
+                <input class="replybtn" type="text" name="email" placeholder="email" />
             </p>
             <p>
-                <textarea type="text" name="body" placeholder="Body"></textarea>
+                <textarea class="textarea" type="text" name="body" placeholder="Body"></textarea>
             </p>
             <p>
-                <select name="posts">
+                <select  class="replybtn" name="posts">
                     <option value="Add Reply">Address</option>
                     <% posts.forEach ( post => { %>
                         <option value="<%= post._id %>">
@@ -110,7 +110,7 @@
                         <% }) %>
                 </select>
             </p>
-            <input type="submit" value="Reply" />
+            <input  class="replybtn" type="submit" value="Reply" />
         </form>
     </main>
 </body>

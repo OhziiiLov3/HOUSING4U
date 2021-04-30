@@ -226,4 +226,27 @@ position: relative;
 }
 .replybtn{
 	align-content: center;
+	font-family: 'Lato',sans-serif;
+	padding: 0 15;
+	margin: 0;
+}
+.loginbtn{
+	align-content: center;
+	font-family: 'Lato',sans-serif;
+	padding: 0 15;
+	margin: 0;
+}
+
+.updatebtn{
+	align-content: center;
+	font-family: 'Lato',sans-serif;
+}
+
+.textarea{
+font-family: 'Lato',sans-serif;
+margin:0;
+padding:0;
+align-content: center;
+width: 300px;
+height: 100px;
 }

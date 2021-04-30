@@ -95,26 +95,27 @@
 <main>
     <form action="/posts" method="POST">
         <p>
-            <input type="text" name="location" placeholder="location" />
-            <input type="text" name="neighborhood" placeholder="neighborhood">
-            <input type="text" name="address" placeholder="address">
+            <input class="replybtn" "type="text" name="location" placeholder="location" />
+            <input class="replybtn" type="text" name="neighborhood" placeholder="neighborhood">
+            <input class="replybtn" type="text" name="address" placeholder="address">
         </p>
         <label for="avatar">Upload Image of unit:</label>
         
-        <input type="text" placeholder="Upload Image" name="img" accept="image/png, image/jpeg">
+        <input class="replybtn" type="text" placeholder="Upload Image" name="img" accept="image/png, image/jpeg">
+        <div>
+            Is Smoking Allowed: <input class="replybtn" type="checkbox" name="isSmokingAllowed">
+            Are Pets Allowed: <input class="replybtn" type="checkbox" name="isPetsAllowed">
+        </div>
         <p>
-            <textarea type="text" name="description" placeholder="Description"></textarea>
+            <textarea class="textarea" type="text" name="description" placeholder="Description"></textarea>
         </p>
         <p>
-               <input type="text" name="rentAmount" placeholder="Rent Amount">
+               <input class="replybtn" type="text" name="rentAmount" placeholder="Rent Amount">
             </select>
             </p>
-            <div>
-                Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
-                Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
-            </div>
+            
             </main>
-            <input type="submit" value="Add" />
+            <input  class="replybtn" type="submit" value="Add" />
 
 
 </html>
