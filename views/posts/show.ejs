@@ -18,82 +18,23 @@
     <title>Housing4You</title>
 </head>
 <body class="body">
-    <div class="area">
-        <nav class="main-menu">
-            <ul>
-                <li>
-                    <a href="/">
-                        <i class="fa fa-home fa-2x"></i>
-                        <span class="nav-text">
-                            Home
-                        </span>
-                    </a>
-
-                </li>
-                <li class="has-subnav">
-                    <a href="/login">
-                        <i class="fa fa-laptop fa-2x"></i>
-                        <span class="nav-text">
-                            Login
-                        </span>
-                    </a>
-
-                </li>
-                <li class="has-subnav">
-                    <a href="/posts">
-                        <i class="fa fa-list fa-2x"></i>
-                        <span class="nav-text">
-                            View Listings
-                        </span>
-                    </a>
-                <li>
-                    <a href="/replies/new">
-                        <i class="fa fa-font fa-2x"></i>
-                        <span class="nav-text">
-                            Reply
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/posts/new">
-                        <i class="fa fas fa-edit"></i>
-                        <span class="nav-text">
-                            Add New Lisiting
-                        </span>
-                    </a>
-            </ul>
-
-            <ul class="logout">
-                <li>
-                    <a href="/register">
-                        <i class="fas fa-user-plus"></i>
-                        <span class="nav-text">
-                            Register
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <nav>
+    
         <h1>Show Page Housing4You</h1>
-        <!-- <ul> -->
-            <!-- <li> -->
-                <!-- <a href="/posts">Listings</a> -->
-            <!-- </li> -->
-            <!-- <li> -->
-                <!-- <a href="/posts/new">Add Listings</a> -->
-            <!-- </li> -->
-            <!-- <li> -->
-                <!-- <a href="/replies">Reply</a> -->
-            <!-- </li> -->
-        <!-- </ul> -->
+       
+            <p>
+                <a href="/posts">View Listings</a>
+            </p>
+            <p>
+                <a href="/posts/new">Add Listings</a>
+            </p>
+            <p>
+                <a href="/replies/new">Reply</a>
+            </p>
     </nav>
     <div>
-        <section>
+        <article>
             <h2>Contact Today!</h2>
-           
-           
+        
                 <% post.replies.forEach(reply=> { %>
                     <p>
                         <a href="/replies/<%= reply._id %>">
@@ -102,9 +43,6 @@
                     </p>
                     <% }) %>
             
-            <button>
-                <a href="/replies">Reply</a>
-            </button>
             <h2>Listing Info</h2>
                 <img src="<%= post.img %>" alt="image">
                 <p>Location: <%= post.location %></p> 
@@ -123,7 +61,7 @@
         <button>
             <a href="/posts/<%= post._id %>/edit">Update</a>
         </button>
-        </section>
+    </article>
     </div>
 </body>
 </html>

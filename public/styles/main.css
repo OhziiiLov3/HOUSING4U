@@ -108,6 +108,7 @@ margin:7px 0;
 position:relative;
 display:block;
 width:250px;
+
 }
 
 .main-menu li>a {
@@ -141,6 +142,7 @@ display:table-cell;
 vertical-align:middle;
 width:190px;
   font-family: 'Titillium Web', sans-serif;
+  color:rgb(231, 224, 212);
 }
 
 .main-menu>ul.logout {
@@ -220,4 +222,7 @@ padding:0;
 align-content: center;
 width: 100%;
 position: relative;
+}
+.replybtn{
+	align-content: center;
 }
