@@ -220,7 +220,7 @@ left: 50;
 .homevideo{
 margin:0;
 padding:0;
-border: 1px solid blanchedalmond;;
+border: 4px solid blanchedalmond;;
 border-radius: 10%;
 }
 
@@ -255,7 +255,7 @@ height: 100px;
 .showimg{
 margin:0;
 padding:0;
-border: 1px solid blanchedalmond;;
+border: 3px solid blanchedalmond;;
 border-radius: 10%;
 align-content: center	
 }
