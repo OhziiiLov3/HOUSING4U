@@ -142,7 +142,7 @@ display:table-cell;
 vertical-align:middle;
 width:190px;
 font-size: 15px;
-font-family: 'Titillium Web', sans-serif;
+font-family: 'Lato',sans-serif;
 color:rgb(231, 224, 212);
 }
 
@@ -225,5 +225,28 @@ width: 100%;
 position: relative;
 }
 .replybtn{
-	align-content: center;
+align-content: center;
+font-family: 'Lato',sans-serif;
+padding: 0 15;
+margin: 0;
+}
+.loginbtn{
+align-content: center;
+font-family: 'Lato',sans-serif;
+padding: 0 15;
+margin: 0;
+}
+
+.updatebtn{
+align-content: center;
+font-family: 'Lato',sans-serif;
+}
+
+.textarea{
+font-family: 'Lato',sans-serif;
+margin:0;
+padding:0;
+align-content: center;
+width: 300px;
+height: 100px;
 }

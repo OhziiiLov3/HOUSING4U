@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,7 +17,6 @@
     <script src="/scripts/app.js" defer></script>
     <title>Housing4You</title>
 </head>
-
 <body>
     <header>
         <nav>
@@ -27,7 +25,7 @@
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/posts">Authors</a>
+                    <a href="/posts">View Listings</a>
                 </li>
             </ul>
         </nav>
@@ -36,31 +34,88 @@
         <h1>Update <%= post.address %></h1>
         <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
             <p>
-            <input type="text" name="location" placeholder="Update Location" value="<%= post.location %>" />
-            <input type="text" name="address" placeholder="Update Address" value="<%= post.address %>" />
-            <input type="text" placeholder="upload Image" name="img" accept="image/png, image/jpeg">
-            <input type="submit" value="Update" />
+            <input class="loginbtn" type="text" name="location" placeholder="Update Location" value="<%= post.location %>" />
+            <input class="loginbtn" type="text" name="address" placeholder="Update Address" value="<%= post.address %>" />
+            <input  class="loginbtn" type="text" placeholder="upload Image" name="img" accept="image/png, image/jpeg">
+            <input class="loginbtn" type="submit" value="Update" />
             <p>
             <p>
-                <textarea type="text" name="description" placeholder="Description"></textarea>
+                <textarea class="textarea" type="text" name="description" placeholder="Description"></textarea>
             </p>
             <p>
-                <input type="text" name="rentAmount" placeholder="Rent Amount">
+                <input class="loginbtn" type="text" name="rentAmount" placeholder="Rent Amount">
                 </select>
             </p>
             <div>
-                Is Smoking Allowed: <input type="checkbox" name="isSmokingAllowed">
-                Are Pets Allowed: <input type="checkbox" name="isPetsAllowed">
+                Is Smoking Allowed: <input class="loginbtn" type="checkbox" name="isSmokingAllowed">
+                Are Pets Allowed: <input class="loginbtn" type="checkbox" name="isPetsAllowed">
             </div>
         </form>
         <br>
         </section>
         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Listing" />
+            <input  class="loginbtn"type="submit" value="Delete Listing" />
         </form>
-        
         <section>
+            <div class="area">
+                <nav class="main-menu">
+                    <ul>
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-home fa-2x"></i>
+                                <span class="nav-text">
+                                    Home
+                                </span>
+                            </a>
+            
+                        </li>
+                        <li class="has-subnav">
+                            <a href="/login">
+                                <i class="fa fa-laptop fa-2x"></i>
+                                <span class="nav-text">
+                                    Login
+                                </span>
+                            </a>
+            
+                        </li>
+            
+                        <li class="has-subnav">
+                            <a href="/posts">
+                                <i class="fa fa-list fa-2x"></i>
+                                <span class="nav-text">
+                                    View Listings
+                                </span>
+                            </a>
+            
+                        <li>
+                            <a href="/posts/new">
+                                <i class="fa fas fa-edit"></i>
+                                <span class="nav-text">
+                                    Add New Lisiting
+                                </span>
+                            </a>
+                        <li>
+                            <a href="/replies">
+                                <i class="fa fa-font fa-2x"></i>
+                                <span class="nav-text">
+                                    Replies
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+            
+                    <ul class="logout">
+                        <li>
+                            <a href="/register">
+                                <i class="fas fa-user-plus"></i>
+                                <span class="nav-text">
+                                    Register
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
     </main>
 </body>
-
 </html>

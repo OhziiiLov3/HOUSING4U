@@ -93,15 +93,17 @@
     <main>
         <section>
             <h2>Contact Info</h2>
+            <button class="loginbtn">
             <a href="/replies/<%= reply._id %>/edit">Edit</a>
-            
+            </button>
                 <p>Name: <%= reply.name %></p>
                 <p>Email: <%= reply.email %></p>
                 <p>Reply: <%= reply.body %></p>
+                <p>Address: <%= reply.posts.address %></p>
             
         </section>
         <form action="/replies/<%= reply._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete reply"/>
+            <input  class="loginbtn" type="submit" value="Delete reply"/>
         </form>
     </main>
 </body>
