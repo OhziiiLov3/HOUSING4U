@@ -21,6 +21,14 @@ Craigslist
 - As a user, I want to reply to a listing
 - As a user, I want to update my search with checkboxes 
 
+### Code Snippets 
+
+- ![Screen Shot 2021-05-03 at 9 14 06 AM](https://media.git.generalassemb.ly/user/35030/files/2d925e80-abf0-11eb-8b73-1e006fb008be)
+
+- ![Screen Shot 2021-05-03 at 9 15 02 AM](https://media.git.generalassemb.ly/user/35030/files/32efa900-abf0-11eb-8998-1ca3b83c8153)
+
+- ![Screen Shot 2021-05-03 at 9 12 27 AM](https://media.git.generalassemb.ly/user/35030/files/6b8f8280-abf0-11eb-958f-765f193d771b)
+
 ### WireFrames 
 
 ## Home/Page

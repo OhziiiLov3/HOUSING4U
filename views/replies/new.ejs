@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="/styles/main.css">
+    <!-- Slide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <!-- Main JS -->
@@ -91,6 +94,7 @@
         </ul>
     </nav>
     <main>
+     
         <form action="/replies" method="POST">
             
             <p>
@@ -112,7 +116,11 @@
             </p>
             <input  class="replybtn" type="submit" value="Reply" />
         </form>
+        <script>
+            new Splide('.splide').mount();
+        </script>
     </main>
+ 
 </body>
 
 </html>
